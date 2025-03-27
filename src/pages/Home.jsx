@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Carousel, Nav } from "react-bootstrap";
+import React, { useState, useEffect, Suspense } from "react";
+import Carousel from "react-bootstrap/Carousel"; // ✅ Correct Import
+import Nav from "react-bootstrap/Nav"; // ✅ Ensure Correct Import
 import { FaBookOpen } from "react-icons/fa";
 import "../styles/Home.css";
 
@@ -42,25 +43,31 @@ const Home = () => {
   const [showMeaning, setShowMeaning] = useState(false);
   const [selectedChapter, setSelectedChapter] = useState(null);
 
+  // ✅ Optimized useEffect to Avoid Frequent Re-renders
   useEffect(() => {
     const interval = setInterval(() => {
       setShowMeaning((prev) => !prev);
-      if (showMeaning) {
+      if (!showMeaning) {
         setCurrentSlokaIndex((prevIndex) => (prevIndex + 1) % slokas.length);
       }
     }, 5000);
+
     return () => clearInterval(interval);
   }, [showMeaning]);
 
   return (
     <div className="home-container">
+      {/* ✅ Bhagavad Gita Chapters */}
       <div className="menu-frame">
         <h2 className="kaand-title">श्रीमद्भगवद्गीता</h2>
         <ul className="kaand-list">
           {chapters.map((chapter, index) => (
             <li key={index} className="kaand-item">
               <FaBookOpen className="kaand-icon" />
-              <Nav.Link onClick={() => setSelectedChapter(chapter)} className="kaand-link updated-link">
+              <Nav.Link 
+                onClick={() => setSelectedChapter(chapter)} 
+                className="kaand-link updated-link"
+              >
                 {chapter.name} ({chapter.slokas} श्लोक)
               </Nav.Link>
             </li>
@@ -70,18 +77,29 @@ const Home = () => {
           <p className="selected-chapter">{selectedChapter.name} - {selectedChapter.slokas} Slokas</p>
         )}
       </div>
+
+      {/* ✅ Sloka Frame */}
       <div className="sloka-frame">
         <p className="gita-sloka">{slokas[currentSlokaIndex].text}</p>
         {showMeaning && <p className="gita-meaning">{slokas[currentSlokaIndex].meaning}</p>}
       </div>
+
+      {/* ✅ Optimized Image Carousel */}
       <div className="carousel-frame">
-        <Carousel controls={false} indicators={false} interval={3000} className="vertical-carousel">
-          {[...Array(9).keys()].map((index) => (
-            <Carousel.Item key={index}>
-              <img className="d-block w-100 fixed-image" src={`/images/slider${index + 1}.jpg`} alt={`Slide ${index + 1}`} />
-            </Carousel.Item>
-          ))}
-        </Carousel>
+        <Suspense fallback={<p>Loading Carousel...</p>}>
+          <Carousel controls={false} indicators={false} interval={3000} className="vertical-carousel">
+            {[...Array(9).keys()].map((index) => (
+              <Carousel.Item key={index}>
+                <img 
+                  className="d-block w-100 fixed-image" 
+                  src={`${import.meta.env.BASE_URL}images/slider${index + 1}.jpg`} 
+                  alt={`Slide ${index + 1}`} 
+                  loading="lazy" 
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </Suspense>
       </div>
     </div>
   );

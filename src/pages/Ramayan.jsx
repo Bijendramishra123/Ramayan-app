@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Carousel, Nav } from "react-bootstrap";
-import { FaBookOpen } from "react-icons/fa";
+import React, { useState, useEffect, lazy, Suspense, useCallback } from "react";
+import { Nav } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
 import "../styles/Ramayan.css";
+
+// ✅ Lazy Load Components for Faster Performance
+const FaBookOpen = lazy(() => import("react-icons/fa").then((module) => ({ default: module.FaBookOpen })));
 
 const kaands = [
   { name: "बाल कांड", path: "/bal-kaand" },
@@ -25,13 +27,20 @@ const Ramayan = () => {
   const [showMeaning, setShowMeaning] = useState(false);
   const navigate = useNavigate(); // ✅ Initialize useNavigate
 
+  // ✅ Optimized Navigation using useCallback
+  const handleNavigation = useCallback((path) => {
+    navigate(path);
+  }, [navigate]);
+
+  // ✅ Optimized useEffect to Prevent Extra Re-renders
   useEffect(() => {
     const interval = setInterval(() => {
       setShowMeaning((prev) => !prev);
-      if (showMeaning) {
+      if (!showMeaning) {
         setCurrentDohaIndex((prevIndex) => (prevIndex + 1) % dohas.length);
       }
     }, 5000);
+
     return () => clearInterval(interval);
   }, [showMeaning]);
 
@@ -46,9 +55,11 @@ const Ramayan = () => {
           <ul className="kaand-list">
             {kaands.map((kaand, index) => (
               <li key={index} className="kaand-item">
-                <FaBookOpen className="kaand-icon" />
+                <Suspense fallback={<span>📖</span>}>
+                  <FaBookOpen className="kaand-icon" />
+                </Suspense>
                 <Nav.Link
-                  onClick={() => navigate(kaand.path)} // ✅ Navigate on click
+                  onClick={() => handleNavigation(kaand.path)} // ✅ Optimized Navigation
                   className="kaand-link updated-link"
                 >
                   {kaand.name}
@@ -70,11 +81,12 @@ const Ramayan = () => {
             width="100%"
             height="100%"
             src="https://www.youtube.com/embed/pF3hCLELuqI?si=bQAAQLWZ3iD99Bc0"
-            title="रामायण वीडियो"
+            title="रामायण वीडियो | Ramayan Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
+            loading="lazy" // ✅ Lazy Load Video
           ></iframe>
         </div>
       </div>

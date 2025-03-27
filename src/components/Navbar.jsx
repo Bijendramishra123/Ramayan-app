@@ -7,11 +7,21 @@ const NavigationBar = () => {
   return (
     <Navbar expand="lg" variant="dark" className="transparent-navbar shadow w-100">
       <Container>
+        {/* ✅ Fixed Logo Path */}
         <Navbar.Brand as={Link} to="/" className="navbar-brand-custom">
-          <img src="/logo.png" alt="Logo" width="50" height="50" className="d-inline-block align-top ms-2" />
-          !! जय श्री राम !!
+          <img 
+            src={`${import.meta.env.BASE_URL}logo.png`} 
+            alt="Logo" 
+            width="50" 
+            height="50" 
+            className="d-inline-block align-top ms-2"
+          />
+          <span className="ms-2">!! जय श्री राम !!</span>
         </Navbar.Brand>
+
+        {/* ✅ Responsive Toggle Button */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto custom-nav">
             <Nav.Link as={Link} to="/" className="nav-item-custom">Home</Nav.Link>
