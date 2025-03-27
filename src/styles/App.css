@@ -1,0 +1,27 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: url("/background.jpg") no-repeat center center/cover;
+    color: white;
+    padding: 50px 20px;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 20px;
+    }
+  }
+  

@@ -1,0 +1,28 @@
+.navbar {
+    background-color: #712709;
+    padding: 15px 20px;
+    width: 100%;
+  }
+  .navbar-brand img {
+    height: 50px;
+    width: auto;
+  }
+  .navbar-nav .nav-link {
+    color: white !important;
+    font-size: 18px;
+    padding: 10px;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #f39c12 !important;
+  }
+  .navbar-brand img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: cover;
+  }
+  .navbar-nav .nav-link {
+    margin: 0 15px; /* Left-Right Space */
+    padding: 10px 15px;
+    font-size: 18px;
+  }
