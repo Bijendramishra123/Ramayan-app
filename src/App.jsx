@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BalKaand from "./pages/kaands/balKaand";
 import AyodhyaKaand from "./pages/kaands/ayodhyaKaand";
-import AranyaKaand from "./pages/kaands/aranyaKaand";
+import AranyaKaand from "./pages/kaands/aranyaKaand"; 
 import KishkindhaKaand from "./pages/kaands/kishkindhaKaand";
 import SundarKaand from "./pages/kaands/sundarKaand";
 import LankaKaand from "./pages/kaands/lankaKaand";

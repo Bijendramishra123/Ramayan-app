@@ -1,0 +1,153 @@
+/* Frame और Background Styling */
+.background-frame {
+    background-color: #000; /* Background black */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    max-width: 900px;
+    margin: auto;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.kaand-container {
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Heading and Subtitle */
+.kaand-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sub-title {
+    font-size: 1.5rem;
+    color: #f1c40f;
+}
+
+/* Sloka Section */
+.sloka-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sloka Box Styling */
+.sloka-card {
+    background: #1a1a1a; /* Dark background */
+    padding: 30px;
+    margin: 15px 0;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    position: relative;
+    color: white;
+}
+
+/* Scroll होने पर Animation दिखे */
+.sloka-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover Effect सिर्फ बॉक्स के बाहर लाइन पर */
+.hover-line {
+    width: 100%;
+    height: 4px;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.sloka-card:hover .hover-line {
+    background-color: yellow;
+}
+
+/* Typing Effect */
+.typing-effect {
+    display: block;
+    white-space: pre-line;
+    overflow: hidden;
+    border-right: 2px solid transparent;
+    animation: typing 3s steps(50, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: white;
+    }
+}
+
+/* Pencil Icon Moving Effect */
+.pencil-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    color: white;
+    animation: movePencil 2s linear infinite;
+}
+
+@keyframes movePencil {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .background-frame {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .kaand-title {
+        font-size: 2rem;
+    }
+
+    .sub-title {
+        font-size: 1.2rem;
+    }
+
+    .sloka-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kaand-title {
+        font-size: 1.8rem;
+    }
+
+    .sub-title {
+        font-size: 1rem;
+    }
+
+    .sloka-card {
+        padding: 15px;
+    }
+}
