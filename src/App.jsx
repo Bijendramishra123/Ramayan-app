@@ -12,7 +12,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import BalKaand from "./pages/kaands/balKaand";
 import AyodhyaKaand from "./pages/kaands/ayodhyaKaand";
-import AranyaKaand from "./pages/kaands/aranyaKaand"; 
+import AranyaKaand from "./pages/kaands/aranyaKaand";
 import KishkindhaKaand from "./pages/kaands/kishkindhaKaand";
 import SundarKaand from "./pages/kaands/sundarKaand";
 import LankaKaand from "./pages/kaands/lankaKaand";
@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     const user = localStorage.getItem("user");
     setIsAuthenticated(!!user); // Convert to boolean
-  }, []); // Run only once on mount
+  }, []);
 
   return (
     <Router>
