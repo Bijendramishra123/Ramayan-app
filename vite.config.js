@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Ramayan-app/', // 🔹 Match exactly with your GitHub repo name
+  base: "/Ramayan-app/", // 👈 Ensure this matches your GitHub repo name
 });
