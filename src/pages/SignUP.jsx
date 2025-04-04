@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaGoogle, FaFacebook } from "react-icons/fa"; // Using icons from react-icons
 import "../styles/SignUp.css";
 
 const SignUp = () => {
@@ -12,20 +13,15 @@ const SignUp = () => {
   const handleSignUp = (e) => {
     e.preventDefault();
 
-    // Password match validation
     if (password !== confirmPassword) {
       setError("Passwords do not match!");
       return;
     }
 
-    // Storing user temporarily (Replace with API call)
     const userData = { email };
     localStorage.setItem("user", JSON.stringify(userData));
-
     console.log("User registered:", userData);
-    console.log("Navigating to login...");
 
-    // Navigate to login after signup
     navigate("/login");
   };
 
@@ -34,7 +30,7 @@ const SignUp = () => {
       <form onSubmit={handleSignUp} className="auth-box">
         <h2>Sign Up</h2>
         {error && <p className="error-message">{error}</p>}
-        
+
         <div className="input-group">
           <label>Email:</label>
           <input
@@ -67,11 +63,13 @@ const SignUp = () => {
 
         <button type="submit" className="auth-btn">Sign Up</button>
 
-        <p>Already have an account? <a href="/login">Login</a></p>
-
         <div className="social-login">
-          <button className="google-btn">Sign Up with Google</button>
-          <button className="facebook-btn">Sign Up with Facebook</button>
+          <button className="google-btn">
+            <FaGoogle className="icon" /> Google
+          </button>
+          <button className="facebook-btn">
+            <FaFacebook className="icon" /> Facebook
+          </button>
         </div>
       </form>
     </div>

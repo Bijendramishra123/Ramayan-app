@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaGoogle, FaFacebook } from "react-icons/fa"; // Import icons
 import "./../styles/Login.css";
 
 const Login = ({ setIsAuthenticated }) => {
@@ -46,12 +47,13 @@ const Login = ({ setIsAuthenticated }) => {
         </div>
         <button type="submit" className="login-btn">Login</button>
         <div className="social-login">
-          <button className="google-btn">Login with Google</button>
-          <button className="facebook-btn">Login with Facebook</button>
+          <button className="google-btn">
+            <FaGoogle size={20} style={{ marginRight: "8px" }} /> Google
+          </button>
+          <button className="facebook-btn">
+            <FaFacebook size={20} style={{ marginRight: "8px" }} /> Facebook
+          </button>
         </div>
-        <p>
-          Don't have an account? <a href="/signup">Sign Up</a>
-        </p>
       </form>
     </div>
   );
