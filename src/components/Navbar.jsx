@@ -1,13 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import "../styles/Navbar.css";
 
-const NavigationBar = () => {
+const NavigationBar = ({ isAuthenticated, setIsAuthenticated }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setIsAuthenticated(false);
+    navigate("/login");
+  };
+
   return (
     <Navbar expand="lg" variant="dark" className="transparent-navbar shadow w-100">
       <Container>
-        {/* ✅ Fixed Logo Path */}
         <Navbar.Brand as={Link} to="/" className="navbar-brand-custom">
           <img 
             src={`${import.meta.env.BASE_URL}logo.png`} 
@@ -19,7 +26,6 @@ const NavigationBar = () => {
           <span className="ms-2">!! जय श्री राम !!</span>
         </Navbar.Brand>
 
-        {/* ✅ Responsive Toggle Button */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav">
@@ -28,6 +34,15 @@ const NavigationBar = () => {
             <Nav.Link as={Link} to="/bhagavadgita" className="nav-item-custom">Bhagavad Gita</Nav.Link>
             <Nav.Link as={Link} to="/ramayan" className="nav-item-custom">Ramayan</Nav.Link>
             <Nav.Link as={Link} to="/contact" className="nav-item-custom">Contact</Nav.Link>
+
+            {isAuthenticated ? (
+              <Button variant="outline-light" className="ms-3" onClick={handleLogout}>Logout</Button>
+            ) : (
+              <>
+                <Nav.Link as={Link} to="/login" className="nav-item-custom">Login</Nav.Link>
+                <Nav.Link as={Link} to="/signup" className="nav-item-custom">SignUp</Nav.Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

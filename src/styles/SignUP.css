@@ -1,0 +1,88 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Transparent background */
+  }
+  
+  .auth-box {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .auth-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .auth-btn:hover {
+    background-color: #218838;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .social-login {
+    margin-top: 15px;
+  }
+  
+  .google-btn, .facebook-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .google-btn {
+    background-color: #db4437;
+    color: white;
+  }
+  
+  .google-btn:hover {
+    background-color: #c1351d;
+  }
+  
+  .facebook-btn {
+    background-color: #3b5998;
+    color: white;
+  }
+  
+  .facebook-btn:hover {
+    background-color: #2e4372;
+  }
+  
