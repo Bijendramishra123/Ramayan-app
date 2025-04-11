@@ -16,7 +16,7 @@ const Login = ({ setIsAuthenticated }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5297/api/auth/login", {
+      const response = await fetch("https://loginsignupapi-2.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,15 +30,15 @@ const Login = ({ setIsAuthenticated }) => {
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem("user", JSON.stringify(data.user)); // ✅ Save user info
+        localStorage.setItem("user", JSON.stringify(data.user));
         setIsAuthenticated(true);
-        navigate("/"); // ✅ Redirect to homepage
+        navigate("/");
       } else {
         setError(data.message || "Login failed. Please check your credentials.");
       }
     } catch (err) {
       console.error("Login Error:", err);
-      setError("Server error. Please check if the backend is running.");
+      setError("Server error. Please try again later.");
     } finally {
       setLoading(false);
     }

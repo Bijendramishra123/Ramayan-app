@@ -17,7 +17,6 @@ const SignUp = () => {
     setError("");
     setLoading(true);
 
-    // ✅ Password match check
     if (password !== confirmPassword) {
       setError("Passwords do not match!");
       setLoading(false);
@@ -25,7 +24,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5297/api/auth/register", {
+      const response = await fetch("https://loginsignupapi-2.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,17 +32,16 @@ const SignUp = () => {
         body: JSON.stringify({
           fullName,
           email,
-          passwordHash: password, // 👈 backend field
+          passwordHash: password,
         }),
       });
 
-      // Response body पढ़ने से पहले check करो content है या नहीं
       const text = await response.text();
       const result = text ? JSON.parse(text) : {};
 
       if (response.ok) {
         console.log("✅ Registered:", result);
-        navigate("/login"); // 👉 Redirect to login after successful signup
+        navigate("/login");
       } else {
         setError(result.message || "Registration failed.");
       }
