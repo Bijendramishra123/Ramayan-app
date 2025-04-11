@@ -56,32 +56,28 @@ const uttarKaandSlokas = [
     doha: "अति प्रिय मोहि इहाँ के बासी। मम धामदा पुरी सुख रासी॥ \nहरषे सब कपि सुनि प्रभु बानी। धन्य अवध जो राम बखानी॥4॥",
     meaning: "यहाँ के निवासी मुझे बहुत ही प्रिय हैं। यह पुरी सुख की राशि और मेरे परमधाम को देने वाली है। प्रभु की वाणी सुनकर सब वानर हर्षित हुए (और कहने लगे कि) जिस अवध की स्वयं श्री रामजी ने बड़ाई की, वह (अवश्य ही) धन्य है।",
   },
-  
-];			
+];
 
 const UttarKaand = () => {
   const slokaRefs = useRef([]);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const revealOnLoad = () => {
       slokaRefs.current.forEach((el) => {
         if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.8) {
-            el.classList.add("show");
-          }
+          el.classList.add("show");
         }
       });
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    revealOnLoad(); // Show all on load for fast visibility
   }, []);
 
   return (
     <Container className="kaand-container">
       <div className="background-frame">
-        <h1 className="kaand-title">उत्तर कांड <span className="sub-title">(सप्तम सोपान-मंगलाचरण)</span></h1>
+        <h1 className="kaand-title">
+          उत्तर कांड <span className="sub-title">(सप्तम सोपान-मंगलाचरण)</span>
+        </h1>
         <div className="sloka-section">
           {uttarKaandSlokas.map((sloka, index) => (
             <div
@@ -90,8 +86,8 @@ const UttarKaand = () => {
               className="sloka-card"
             >
               <FaPencilAlt className="pencil-icon moving-pencil" />
-              <p className="sloka-text typing-effect">{sloka.doha}</p>
-              <p className="sloka-meaning typing-effect">{sloka.meaning}</p>
+              <p className="sloka-text">{sloka.doha}</p>
+              <p className="sloka-meaning">{sloka.meaning}</p>
               <div className="hover-line"></div>
             </div>
           ))}
