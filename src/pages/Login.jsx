@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
-import "./../styles/Login.css";
+import "../styles/Login.css";
 
 const Login = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
@@ -15,15 +15,21 @@ const Login = ({ setIsAuthenticated }) => {
     setError("");
     setLoading(true);
 
+    if (!email || !password) {
+      setError("Please enter both email and password.");
+      setLoading(false);
+      return;
+    }
+
     try {
-      const response = await fetch("https://loginsignupapi-2.onrender.com/api/auth/login", {
+      const response = await fetch("http://localhost:5297/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           email,
-          passwordHash: password,
+          passwordHash: password, // Ensure the server is handling password hashing securely
         }),
       });
 
@@ -33,6 +39,8 @@ const Login = ({ setIsAuthenticated }) => {
         localStorage.setItem("user", JSON.stringify(data.user));
         setIsAuthenticated(true);
         navigate("/");
+        setEmail("");  // Clear fields after successful login
+        setPassword("");
       } else {
         setError(data.message || "Login failed. Please check your credentials.");
       }

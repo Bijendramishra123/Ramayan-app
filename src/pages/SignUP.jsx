@@ -24,7 +24,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await fetch("https://loginsignupapi-2.onrender.com/api/auth/register", {
+      const response = await fetch("http://localhost:5297/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const SignUp = () => {
         body: JSON.stringify({
           fullName,
           email,
-          passwordHash: password,
+          passwordHash: password,  // Make sure your backend handles this securely
         }),
       });
 
@@ -41,6 +41,10 @@ const SignUp = () => {
 
       if (response.ok) {
         console.log("✅ Registered:", result);
+        setFullName("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
         navigate("/login");
       } else {
         setError(result.message || "Registration failed.");
