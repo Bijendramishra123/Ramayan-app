@@ -1,0 +1,85 @@
+/* ✅ Contact Page Styling */
+.contact-container {
+    padding: 40px;
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+/* ✅ Info Section */
+.info-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.info p {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.info a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.info a:hover {
+    text-decoration: underline;
+}
+
+/* ✅ Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon {
+    font-size: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+/* ✅ Social Media Colors */
+.github { color: white; }
+.linkedin { color: #0077b5; }
+.twitter { color: #1da1f2; }
+.facebook { color: #1877f2; }
+.email { color: #ffcc00; }
+
+/* ✅ Google Form */
+.form-section {
+    margin-top: 30px;
+}
+
+.form-section h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+iframe {
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(255, 204, 0, 0.5);
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+    }
+}

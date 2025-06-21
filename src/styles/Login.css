@@ -1,0 +1,82 @@
+.login-container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1); /* More transparent */
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+.login-form {
+    background: rgba(255, 255, 255, 0.1); /* More transparent */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Hover effect for form */
+.login-form:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Styling for Social Login Buttons */
+.social-login {
+    margin-top: 15px;
+}
+
+.google-btn, .facebook-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: background 0.3s ease-in-out, transform 0.2s; */
+}
+
+/* Google Button */
+.google-btn {
+    background-color: #db4437;
+    color: white;
+}
+
+.google-btn:hover {
+    background-color: #c1351d;
+    transform: scale(1.05);
+}
+
+/* Facebook Button */
+.facebook-btn {
+    background-color: #3b5998;
+    color: white;
+}
+
+.facebook-btn:hover {
+    background-color: #2e4372;
+    transform: scale(1.05);
+}
+.login-btn
+{
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: rgb(10, 10, 10);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}

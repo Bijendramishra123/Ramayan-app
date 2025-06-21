@@ -1,0 +1,64 @@
+.navbar {
+    background-color: #712709;
+    padding: 15px 20px;
+    width: 100%;
+  }
+  .navbar-brand img {
+    height: 50px;
+    width: auto;
+  }
+  .navbar-nav .nav-link {
+    color: white !important;
+    font-size: 18px;
+    padding: 10px;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #f39c12 !important;
+  }
+  .navbar-brand img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: cover;
+  }
+  .navbar-nav .nav-link {
+    margin: 0 15px; /* Left-Right Space */
+    padding: 10px 15px;
+    font-size: 18px;
+  }
+/* ✅ Navbar Background */
+.transparent-navbar {
+    background: rgba(0, 0, 0, 0.85); /* Dark Background with Transparency */
+    backdrop-filter: blur(5px);
+    padding: 10px 20px;
+}
+
+/* ✅ Navbar Brand */
+.navbar-brand-custom {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffcc00 !important;
+    display: flex;
+    align-items: center;
+}
+
+/* ✅ Navbar Links */
+.custom-nav .nav-item-custom {
+    font-size: 18px;
+    color: white !important;
+    margin-left: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.custom-nav .nav-item-custom:hover {
+    color: #ffcc00 !important;
+}
+
+/* ✅ Navbar Toggle Button */
+.navbar-toggler {
+    border: 1px solid white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}

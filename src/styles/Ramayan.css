@@ -1,0 +1,116 @@
+/* ✅ Home Page Styling */
+.ramayan-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: white;
+    min-height: 100vh;
+}
+
+/* ✅ Content Wrapper (Ensures Frames are Equal) */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* ✅ Common Frame Styling (Same Size & Dark Background) */
+.menu-frame,
+.doha-frame,
+.video-frame {
+    width: 32%; /* ✅ Ensures All Frames Are Equal */
+    height: 550px; /* ✅ Increased Frame Height */
+    background: rgba(25, 25, 25, 0.9); /* ✅ Darker Background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7); /* ✅ Darker Shadow */
+    position: relative;
+    color: white;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ✅ Animation Added */
+}
+
+/* ✅ Hover Effect: Slight Lift & Glow */
+.menu-frame:hover,
+.doha-frame:hover,
+.video-frame:hover {
+    transform: translateY(-8px) scale(1.02); /* ✅ Move Up & Scale Up */
+    box-shadow: 4px 4px 20px rgba(255, 204, 0, 0.7); /* ✅ Golden Glow Effect */
+}
+
+/* ✅ Menu Frame Styling */
+.menu-frame {
+    overflow-y: auto; /* ✅ Scroll if Content Overflows */
+}
+
+.menu-frame::-webkit-scrollbar {
+    width: 6px;
+}
+
+.menu-frame::-webkit-scrollbar-thumb {
+    background: #ffcc00; /* ✅ Scrollbar Color */
+    border-radius: 10px;
+}
+
+.kaand-title {
+    text-align: center;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* ✅ Doha Frame Styling */
+.doha-frame {
+    text-align: center;
+}
+
+.gita-sloka {
+    font-size: 26px; /* ✅ Bigger Font */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+.gita-meaning {
+    font-size: 20px;
+    font-style: italic;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+/* ✅ Video Frame Styling */
+.video-frame iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-frame,
+    .doha-frame,
+    .video-frame {
+        width: 90%;
+        height: 500px; /* ✅ Adjusted for Smaller Screens */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-frame,
+    .doha-frame,
+    .video-frame {
+        width: 100%;
+        height: auto;
+    }
+}
