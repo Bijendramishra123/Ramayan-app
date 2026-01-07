@@ -1,126 +1,202 @@
 .auth-container {
-    display: flex;
-    background: rgba(255, 255, 255, 0.1); /* More transparent */
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
-    /* height: 100vh; */
-    background-size: cover;
-    background-position: center;
-  }
-  
-  /* Transparent form box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+  background-size: cover;
+  background-position: center;
+  padding: 20px 0;
+  min-height: 100vh;
+}
+
+.auth-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+  width: 500px;  /* Increased width */
+  max-width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: auto;
+}
+
+.auth-box:hover {
+  transform: scale(1.05);
+}
+
+.auth-box h2 {
+  font-size: 26px; /* Increased font size */
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px; /* Reduced margin */
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #fff;
+  font-size: 16px; /* Slightly bigger font size */
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px; /* Increased font size */
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  box-sizing: border-box;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px; /* Increased font size */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.auth-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 16px; /* Increased font size */
+  margin-bottom: 12px;
+}
+
+.social-login {
+  margin-top: 20px; /* Increased margin */
+}
+
+.google-btn,
+.facebook-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 6px;
+  font-size: 18px; /* Increased font size */
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: backgroustatus
+  nd 0.3s ease-in-out, transform 0.2s;
+}
+
+.google-btn {
+  background-color: #db4437;
+  color: white;
+}
+
+.google-btn:hover {
+  background-color: #c1351d;
+  transform: scale(1.05);
+}
+
+.facebook-btn {
+  background-color: #3b5998;
+  color: white;
+}
+
+.facebook-btn:hover {
+  background-color: #2e4372;
+  transform: scale(1.05);
+}
+
+.icon {
+  margin-right: 12px; /* Increased margin */
+  font-size: 20px; /* Increased icon size */
+}
+
+/* Media Queries for responsiveness */
+
+@media (max-width: 768px) {
   .auth-box {
-    background: rgba(255, 255, 255, 0.1); /* More transparent */
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
-    width: 350px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 90%;  /* Adjust width for tablets */
+    padding: 20px;
   }
-  
-  .auth-box:hover {
-    transform: scale(1.05);
-  }
-  
+
   .auth-box h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 20px;
-  }
-  
-  .input-group {
+    font-size: 22px; /* Smaller font size for h2 */
     margin-bottom: 15px;
-    text-align: left;
   }
-  
+
   .input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #fff;
-    font-size: 15px;
+    font-size: 14px;  /* Smaller font size */
   }
-  
+
   .input-group input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #000;
+    font-size: 14px;  /* Smaller font size */
   }
-  
+
   .auth-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease-in-out, transform 0.2s;
+    font-size: 16px;  /* Smaller button text */
   }
-  
-  .auth-btn:hover {
-    background-color: #218838;
-    transform: scale(1.05);
-  }
-  
-  .error-message {
-    color: #ff6b6b;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .social-login {
-    margin-top: 18px;
-  }
-  
-  .google-btn, .facebook-btn {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease-in-out, transform 0.2s;
-  }
-  
-  .google-btn {
-    background-color: #db4437;
-    color: white;
-  }
-  
-  .google-btn:hover {
-    background-color: #c1351d;
-    transform: scale(1.05);
-  }
-  
+
+  .google-btn,
   .facebook-btn {
-    background-color: #3b5998;
-    color: white;
+    font-size: 16px;  /* Smaller button text */
   }
-  
-  .facebook-btn:hover {
-    background-color: #2e4372;
-    transform: scale(1.05);
+
+  .error-message {
+    font-size: 14px;  /* Smaller error message */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .auth-box {
+    width: 100%;  /* Full width for small screens */
+    padding: 15px;
+  }
+
+  .auth-box h2 {
+    font-size: 20px;  /* Smaller font size for h2 */
+  }
+
+  .input-group label {
+    font-size: 12px;  /* Smaller font size */
+  }
+
+  .input-group input {
+    font-size: 12px;  /* Smaller font size */
+  }
+
+  .auth-btn {
+    font-size: 14px;  /* Smaller button text */
+    padding: 10px;
+  }
+
+  .google-btn,
+  .facebook-btn {
+    font-size: 14px;  /* Smaller button text */
+    padding: 10px;
+  }
+
   .icon {
-    margin-right: 10px;
-    font-size: 18px;
+    font-size: 18px;  /* Smaller icon */
+    margin-right: 10px; /* Smaller icon margin */
   }
-  
+}

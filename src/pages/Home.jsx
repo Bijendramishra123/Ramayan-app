@@ -2,6 +2,7 @@ import React, { useState, useEffect, Suspense, useMemo } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Nav from "react-bootstrap/Nav";
 import { FaBookOpen } from "react-icons/fa";
+import ChatBot from "../components/ChatBot";
 import "../styles/Home.css";
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
   const [showMeaning, setShowMeaning] = useState(false);
   const [selectedChapter, setSelectedChapter] = useState(null);
 
-  // ✅ Memoized chapters and slokas moved inside component
+  //  Memoized chapters and slokas moved inside component
   const chapters = useMemo(() => ([
     { name: "अर्जुनविषादयोग", slokas: 47 },
     { name: "सांख्ययोग", slokas: 72 },
@@ -110,6 +111,7 @@ const Home = () => {
             ))}
           </Carousel>
         </Suspense>
+        <ChatBot />
       </div>
     </div>
   );
