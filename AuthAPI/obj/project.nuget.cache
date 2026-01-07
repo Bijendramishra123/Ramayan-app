@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VD9n+1pCjw0=",
+  "dgSpecHash": "9Cx2RHpgiiw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\L\\OneDrive\\Desktop\\ramayan-gita-app\\AuthAPI\\AuthAPI.csproj",
+  "projectFilePath": "C:\\Users\\L\\OneDrive\\Desktop\\StudyEquipement\\ramayan-gita-app\\AuthAPI\\AuthAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\L\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\L\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.3\\microsoft.aspnetcore.authentication.jwtbearer.9.0.3.nupkg.sha512",

@@ -2067,11 +2067,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\L\\OneDrive\\Desktop\\ramayan-gita-app\\AuthAPI\\AuthAPI.csproj",
+      "projectUniqueName": "C:\\Users\\L\\OneDrive\\Desktop\\StudyEquipement\\ramayan-gita-app\\AuthAPI\\AuthAPI.csproj",
       "projectName": "AuthAPI",
-      "projectPath": "C:\\Users\\L\\OneDrive\\Desktop\\ramayan-gita-app\\AuthAPI\\AuthAPI.csproj",
+      "projectPath": "C:\\Users\\L\\OneDrive\\Desktop\\StudyEquipement\\ramayan-gita-app\\AuthAPI\\AuthAPI.csproj",
       "packagesPath": "C:\\Users\\L\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\L\\OneDrive\\Desktop\\ramayan-gita-app\\AuthAPI\\obj\\",
+      "outputPath": "C:\\Users\\L\\OneDrive\\Desktop\\StudyEquipement\\ramayan-gita-app\\AuthAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2105,7 +2105,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -2157,7 +2157,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.205/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
